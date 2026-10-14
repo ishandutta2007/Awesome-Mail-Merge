@@ -1,6 +1,6 @@
 # Awesome-Mail-Merge
 
-# Top Mail Merge Tools Ecosystem
+## Top Mail Merge Tools Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Personalized Bulk Email, Gmail-Based Campaigns & Document Generation*  
