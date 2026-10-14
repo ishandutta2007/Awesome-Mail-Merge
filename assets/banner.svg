@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+
+    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="subtle-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.65; transform: scale(1.08); }
+      }
+      @keyframes floatParticle1 {
+        0%, 100% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-18px) translateX(12px); }
+      }
+      @keyframes floatParticle2 {
+        0%, 100% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(15px) translateX(-10px); }
+      }
+      @keyframes dashFlow {
+        0% { stroke-dashoffset: 200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes shimmerBorder {
+        0%, 100% { stroke-opacity: 0.4; }
+        50% { stroke-opacity: 0.9; }
+      }
+      .anim-glow {
+        transform-origin: 300px 200px;
+        animation: pulseGlow 6s ease-in-out infinite;
+      }
+      .anim-glow2 {
+        transform-origin: 900px 220px;
+        animation: pulseGlow 8s ease-in-out infinite alternate;
+      }
+      .particle-1 {
+        animation: floatParticle1 5s ease-in-out infinite;
+      }
+      .particle-2 {
+        animation: floatParticle2 6.5s ease-in-out infinite;
+      }
+      .flow-path {
+        stroke-dasharray: 8 6;
+        animation: dashFlow 20s linear infinite;
+      }
+      .shimmer-card {
+        animation: shimmerBorder 4s ease-in-out infinite;
+      }
+      .main-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 900;
+        letter-spacing: -1.5px;
+      }
+      .sub-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+      }
+      .badge-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </defs>
+
+  <!-- Deep Background Layer -->
+  <rect width="1200" height="420" rx="16" fill="url(#bg-grad)"/>
+
+  <!-- Subtle Modern Tech Grid -->
+  <g opacity="0.07" stroke="#94a3b8" stroke-width="1">
+    <line x1="0" y1="70" x2="1200" y2="70"/>
+    <line x1="0" y1="140" x2="1200" y2="140"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="350" x2="1200" y2="350"/>
+    <line x1="150" y1="0" x2="150" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="450" y1="0" x2="450" y2="420"/>
+    <line x1="600" y1="0" x2="600" y2="420"/>
+    <line x1="750" y1="0" x2="750" y2="420"/>
+    <line x1="900" y1="0" x2="900" y2="420"/>
+    <line x1="1050" y1="0" x2="1050" y2="420"/>
+  </g>
+
+  <!-- Dynamic Ambient Glow Blobs (Background) -->
+  <circle cx="280" cy="180" r="180" fill="url(#glow-grad)" class="anim-glow"/>
+  <circle cx="940" cy="220" r="210" fill="url(#glow-grad)" class="anim-glow2"/>
+
+  <!-- Dynamic Animated Flow Lines (Connecting Merge Nodes) -->
+  <g opacity="0.35" class="flow-path">
+    <path d="M 80 120 Q 240 60 400 130 T 720 110 T 1120 130" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M 80 300 Q 300 360 550 310 T 900 330 T 1120 290" fill="none" stroke="#a855f7" stroke-width="1.8"/>
+  </g>
+
+  <!-- Dynamic Floating Decorative Particles (Background Layer) -->
+  <g class="particle-1">
+    <circle cx="160" cy="100" r="5" fill="#38bdf8" opacity="0.7" filter="url(#neon-glow)"/>
+    <circle cx="1040" cy="110" r="6" fill="#818cf8" opacity="0.6" filter="url(#neon-glow)"/>
+    <circle cx="990" cy="320" r="4" fill="#ec4899" opacity="0.7"/>
+    <!-- Floating Spreadsheet / Mail Node -->
+    <rect x="90" y="240" width="36" height="28" rx="5" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" opacity="0.6"/>
+    <line x1="98" y1="248" x2="118" y2="248" stroke="#38bdf8" stroke-width="1.5" opacity="0.8"/>
+    <line x1="98" y1="255" x2="114" y2="255" stroke="#94a3b8" stroke-width="1.2" opacity="0.6"/>
+  </g>
+
+  <g class="particle-2">
+    <circle cx="240" cy="330" r="4.5" fill="#c084fc" opacity="0.7" filter="url(#neon-glow)"/>
+    <circle cx="1080" cy="240" r="5" fill="#38bdf8" opacity="0.6"/>
+    <!-- Floating Mail Merge Envelope Icon (Right Background) -->
+    <rect x="1050" y="160" width="40" height="28" rx="4" fill="#1e293b" stroke="#c084fc" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 1052 162 L 1070 176 L 1088 162" fill="none" stroke="#c084fc" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Outer Border with Shimmer -->
+  <rect x="2" y="2" width="1196" height="416" rx="15" fill="none" stroke="url(#accent-cyan)" stroke-width="1.5" class="shimmer-card"/>
+
+  <!-- ================= FOREGROUND CONTENT (Guaranteed Above All Dynamic Elements) ================= -->
+
+  <!-- Top Category Pill -->
+  <g transform="translate(600, 72)" filter="url(#subtle-shadow)">
+    <rect x="-140" y="-16" width="280" height="32" rx="16" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+    <circle cx="-116" cy="0" r="4.5" fill="#38bdf8" filter="url(#neon-glow)"/>
+    <text x="-98" y="5" fill="#e2e8f0" font-size="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" letter-spacing="1.2">CURATED ECOSYSTEM DIRECTORY</text>
+  </g>
+
+  <!-- Primary Title (Clean, Crisp Foreground) -->
+  <g transform="translate(600, 165)">
+    <!-- Shadow for ultra readability -->
+    <text x="0" y="0" text-anchor="middle" fill="#000000" opacity="0.6" font-size="62" class="main-title" dy="4">Awesome Mail Merge</text>
+    <!-- Gradient Fill Title -->
+    <text x="0" y="0" text-anchor="middle" fill="url(#accent-cyan)" font-size="62" class="main-title" filter="url(#neon-glow)">Awesome Mail Merge</text>
+  </g>
+
+  <!-- Subtitle (Clear, Legible) -->
+  <g transform="translate(600, 222)">
+    <text x="0" y="0" text-anchor="middle" fill="#f8fafc" font-size="20" class="sub-title" font-weight="500">
+      Personalized Bulk Email • Gmail &amp; Google Sheets Automation • Document Generation Engines
+    </text>
+    <text x="0" y="26" text-anchor="middle" fill="#94a3b8" font-size="15" class="sub-title">
+      Comprehensive Directory of SaaS Market Leaders &amp; Open-Source Self-Hosted Solutions
+    </text>
+  </g>
+
+  <!-- Foreground Feature Badges (Interactive look, High Z-Index) -->
+  <g transform="translate(600, 324)" filter="url(#subtle-shadow)">
+    <!-- Badge 1: Open Source -->
+    <g transform="translate(-320, 0)">
+      <rect x="-105" y="-18" width="210" height="38" rx="19" fill="url(#card-grad)" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="0" y="5" text-anchor="middle" fill="#38bdf8" class="badge-text">⚡ 22+ Open-Source Repos</text>
+    </g>
+
+    <!-- Badge 2: SaaS Market Leaders -->
+    <g transform="translate(0, 0)">
+      <rect x="-105" y="-18" width="210" height="38" rx="19" fill="url(#card-grad)" stroke="#818cf8" stroke-width="1.2"/>
+      <text x="0" y="5" text-anchor="middle" fill="#e0e7ff" class="badge-text">🏢 10 SaaS Leaders Analyzed</text>
+    </g>
+
+    <!-- Badge 3: Transparency & Pricing -->
+    <g transform="translate(320, 0)">
+      <rect x="-115" y="-18" width="230" height="38" rx="19" fill="url(#card-grad)" stroke="#c084fc" stroke-width="1.2"/>
+      <text x="0" y="5" text-anchor="middle" fill="#c084fc" class="badge-text">⭐ Live Stars &amp; Pricing Tiers</text>
+    </g>
+  </g>
+
+</svg>
